@@ -1,0 +1,18 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/mnt/c/Users/P_Cat/IdeaProjects/naivebayes-hassang2/digit_classifier.cpp
+digit_classifier.h
+/mnt/c/Users/P_Cat/IdeaProjects/naivebayes-hassang2/digit_classifier.h
+iostream
+-
+fstream
+-
+
+/mnt/c/Users/P_Cat/IdeaProjects/naivebayes-hassang2/digit_classifier.h
+
