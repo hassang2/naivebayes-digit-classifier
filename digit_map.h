@@ -9,14 +9,28 @@
 #include <map>
 
 class digit_map {
-    int digit_;
-    std::map<std::pair<int, int>, double> feature_map_;
+    double kSmoothing_ = .1;
+//    int digit_;
+    int frequency_ = 0;
+    std::map<std::pair<int, int>, std::map<int, int> > feature_map_;
 
 public:
     digit_map() = default;
+
     explicit digit_map(int dig);
 
-    double Evaluate(char number[28][29]);
+//    int GetDigit();
+
+    double Evaluate(char input[28][29]);
+
+    void Process(char input[28][29]);
+
+    void Add(int i, int j, int value);
+
+    void AddFrequency();
+
 };
+
+int GetValueOf(char c);
 
 #endif //NAIVEBAYES_DIGIT_MAP_H

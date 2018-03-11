@@ -204,33 +204,6 @@ digitdata/image_input.cpp.s:
 	$(MAKE) -f CMakeFiles/naivebayes.dir/build.make CMakeFiles/naivebayes.dir/digitdata/image_input.cpp.s
 .PHONY : digitdata/image_input.cpp.s
 
-feature_vector.o: feature_vector.cpp.o
-
-.PHONY : feature_vector.o
-
-# target to build an object file
-feature_vector.cpp.o:
-	$(MAKE) -f CMakeFiles/naivebayes.dir/build.make CMakeFiles/naivebayes.dir/feature_vector.cpp.o
-.PHONY : feature_vector.cpp.o
-
-feature_vector.i: feature_vector.cpp.i
-
-.PHONY : feature_vector.i
-
-# target to preprocess a source file
-feature_vector.cpp.i:
-	$(MAKE) -f CMakeFiles/naivebayes.dir/build.make CMakeFiles/naivebayes.dir/feature_vector.cpp.i
-.PHONY : feature_vector.cpp.i
-
-feature_vector.s: feature_vector.cpp.s
-
-.PHONY : feature_vector.s
-
-# target to generate assembly for a file
-feature_vector.cpp.s:
-	$(MAKE) -f CMakeFiles/naivebayes.dir/build.make CMakeFiles/naivebayes.dir/feature_vector.cpp.s
-.PHONY : feature_vector.cpp.s
-
 main.o: main.cpp.o
 
 .PHONY : main.o
@@ -276,9 +249,6 @@ help:
 	@echo "... digitdata/image_input.o"
 	@echo "... digitdata/image_input.i"
 	@echo "... digitdata/image_input.s"
-	@echo "... feature_vector.o"
-	@echo "... feature_vector.i"
-	@echo "... feature_vector.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"

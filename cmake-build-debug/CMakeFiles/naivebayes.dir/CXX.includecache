@@ -13,6 +13,34 @@ iostream
 -
 fstream
 -
+map
+-
+vector
+-
+fstream
+-
 
 /mnt/c/Users/P_Cat/IdeaProjects/naivebayes-hassang2/digit_classifier.h
+vector
+-
+iostream
+-
+digit_map.h
+/mnt/c/Users/P_Cat/IdeaProjects/naivebayes-hassang2/digit_map.h
+
+/mnt/c/Users/P_Cat/IdeaProjects/naivebayes-hassang2/digit_map.cpp
+digit_map.h
+/mnt/c/Users/P_Cat/IdeaProjects/naivebayes-hassang2/digit_map.h
+math.h
+-
+
+/mnt/c/Users/P_Cat/IdeaProjects/naivebayes-hassang2/digit_map.h
+utility
+-
+map
+-
+
+/mnt/c/Users/P_Cat/IdeaProjects/naivebayes-hassang2/digitdata/image_input.cpp
+
+/mnt/c/Users/P_Cat/IdeaProjects/naivebayes-hassang2/main.cpp
 

@@ -6,39 +6,42 @@
 #include <fstream>
 #include <map>
 #include <vector>
+#include <fstream>
 
-std::istream &operator>>(std::istream &is, char image[28][29]) {
-    for (int i = 0; i < 28; i++) {
-        is.getline(image[i], 29);
-        std::cout << image[i] << std::endl;
+void digit_classifier::Init() {
+    for (int i = 0; i < 10; i++) {
+        digit_maps_[i] = digit_map();
     }
-
-    return is;
 }
 
-int main() {
+void digit_classifier::Train() {
 
+    Init();
+    std::ifstream inFileTrainingData;
+    std::ifstream inFileLabels;
 
-
-    std::train();
-
-    std::map<int, std::map<std::pair<int, int>, int> > feature_maps ;
-
+    inFileTrainingData.open("digitdata/trainingimages");
+    inFileLabels.open("digitdata/traininglabels");
 
     char image[28][29];
+    int label;
 
-    while (std::cin) {
-        std::cin >> image;
+    while (inFileTrainingData && inFileLabels) {
+        inFileTrainingData >> image;
+        inFileLabels >> label;
+        digit_maps_[label].Process(image);
     }
-
-//    char word[29][29];
-//
-//    for (int i = 0; i < 29; i++) {
-//        std::cin.getline(word[i], 29);
-//        std::cout << word[i] <<std::endl;
-//    }
-
-
 }
 
+int digit_classifier::Evaluate(char input[28][29]) {
+    std::pair<int, double> most_probable(-1, 0.0);
+    for (auto digit_map : digit_maps_) {
+        double probability = digit_map.second.Evaluate(input);
+        if (probability > most_probable.second) {
+            most_probable.first = digit_map.first;
+            most_probable.second = probability;
+        }
+    }
 
+    return most_probable.first;
+}

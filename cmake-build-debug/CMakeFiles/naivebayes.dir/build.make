@@ -105,33 +105,9 @@ CMakeFiles/naivebayes.dir/main.cpp.o.provides: CMakeFiles/naivebayes.dir/main.cp
 CMakeFiles/naivebayes.dir/main.cpp.o.provides.build: CMakeFiles/naivebayes.dir/main.cpp.o
 
 
-CMakeFiles/naivebayes.dir/feature_vector.cpp.o: CMakeFiles/naivebayes.dir/flags.make
-CMakeFiles/naivebayes.dir/feature_vector.cpp.o: ../feature_vector.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/Users/P_Cat/IdeaProjects/naivebayes-hassang2/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/naivebayes.dir/feature_vector.cpp.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/naivebayes.dir/feature_vector.cpp.o -c /mnt/c/Users/P_Cat/IdeaProjects/naivebayes-hassang2/feature_vector.cpp
-
-CMakeFiles/naivebayes.dir/feature_vector.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/naivebayes.dir/feature_vector.cpp.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/c/Users/P_Cat/IdeaProjects/naivebayes-hassang2/feature_vector.cpp > CMakeFiles/naivebayes.dir/feature_vector.cpp.i
-
-CMakeFiles/naivebayes.dir/feature_vector.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/naivebayes.dir/feature_vector.cpp.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/c/Users/P_Cat/IdeaProjects/naivebayes-hassang2/feature_vector.cpp -o CMakeFiles/naivebayes.dir/feature_vector.cpp.s
-
-CMakeFiles/naivebayes.dir/feature_vector.cpp.o.requires:
-
-.PHONY : CMakeFiles/naivebayes.dir/feature_vector.cpp.o.requires
-
-CMakeFiles/naivebayes.dir/feature_vector.cpp.o.provides: CMakeFiles/naivebayes.dir/feature_vector.cpp.o.requires
-	$(MAKE) -f CMakeFiles/naivebayes.dir/build.make CMakeFiles/naivebayes.dir/feature_vector.cpp.o.provides.build
-.PHONY : CMakeFiles/naivebayes.dir/feature_vector.cpp.o.provides
-
-CMakeFiles/naivebayes.dir/feature_vector.cpp.o.provides.build: CMakeFiles/naivebayes.dir/feature_vector.cpp.o
-
-
 CMakeFiles/naivebayes.dir/digitdata/image_input.cpp.o: CMakeFiles/naivebayes.dir/flags.make
 CMakeFiles/naivebayes.dir/digitdata/image_input.cpp.o: ../digitdata/image_input.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/Users/P_Cat/IdeaProjects/naivebayes-hassang2/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/naivebayes.dir/digitdata/image_input.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/Users/P_Cat/IdeaProjects/naivebayes-hassang2/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/naivebayes.dir/digitdata/image_input.cpp.o"
 	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/naivebayes.dir/digitdata/image_input.cpp.o -c /mnt/c/Users/P_Cat/IdeaProjects/naivebayes-hassang2/digitdata/image_input.cpp
 
 CMakeFiles/naivebayes.dir/digitdata/image_input.cpp.i: cmake_force
@@ -155,7 +131,7 @@ CMakeFiles/naivebayes.dir/digitdata/image_input.cpp.o.provides.build: CMakeFiles
 
 CMakeFiles/naivebayes.dir/digit_map.cpp.o: CMakeFiles/naivebayes.dir/flags.make
 CMakeFiles/naivebayes.dir/digit_map.cpp.o: ../digit_map.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/Users/P_Cat/IdeaProjects/naivebayes-hassang2/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/naivebayes.dir/digit_map.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/Users/P_Cat/IdeaProjects/naivebayes-hassang2/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/naivebayes.dir/digit_map.cpp.o"
 	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/naivebayes.dir/digit_map.cpp.o -c /mnt/c/Users/P_Cat/IdeaProjects/naivebayes-hassang2/digit_map.cpp
 
 CMakeFiles/naivebayes.dir/digit_map.cpp.i: cmake_force
@@ -181,7 +157,6 @@ CMakeFiles/naivebayes.dir/digit_map.cpp.o.provides.build: CMakeFiles/naivebayes.
 naivebayes_OBJECTS = \
 "CMakeFiles/naivebayes.dir/digit_classifier.cpp.o" \
 "CMakeFiles/naivebayes.dir/main.cpp.o" \
-"CMakeFiles/naivebayes.dir/feature_vector.cpp.o" \
 "CMakeFiles/naivebayes.dir/digitdata/image_input.cpp.o" \
 "CMakeFiles/naivebayes.dir/digit_map.cpp.o"
 
@@ -190,12 +165,11 @@ naivebayes_EXTERNAL_OBJECTS =
 
 naivebayes: CMakeFiles/naivebayes.dir/digit_classifier.cpp.o
 naivebayes: CMakeFiles/naivebayes.dir/main.cpp.o
-naivebayes: CMakeFiles/naivebayes.dir/feature_vector.cpp.o
 naivebayes: CMakeFiles/naivebayes.dir/digitdata/image_input.cpp.o
 naivebayes: CMakeFiles/naivebayes.dir/digit_map.cpp.o
 naivebayes: CMakeFiles/naivebayes.dir/build.make
 naivebayes: CMakeFiles/naivebayes.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/mnt/c/Users/P_Cat/IdeaProjects/naivebayes-hassang2/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Linking CXX executable naivebayes"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/mnt/c/Users/P_Cat/IdeaProjects/naivebayes-hassang2/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking CXX executable naivebayes"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/naivebayes.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -205,7 +179,6 @@ CMakeFiles/naivebayes.dir/build: naivebayes
 
 CMakeFiles/naivebayes.dir/requires: CMakeFiles/naivebayes.dir/digit_classifier.cpp.o.requires
 CMakeFiles/naivebayes.dir/requires: CMakeFiles/naivebayes.dir/main.cpp.o.requires
-CMakeFiles/naivebayes.dir/requires: CMakeFiles/naivebayes.dir/feature_vector.cpp.o.requires
 CMakeFiles/naivebayes.dir/requires: CMakeFiles/naivebayes.dir/digitdata/image_input.cpp.o.requires
 CMakeFiles/naivebayes.dir/requires: CMakeFiles/naivebayes.dir/digit_map.cpp.o.requires
 
