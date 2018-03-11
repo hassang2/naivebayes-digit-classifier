@@ -4,15 +4,12 @@
 int main() {
 
     digit_classifier classifier = digit_classifier();
-
     classifier.Train();
+    classifier.Test();
 
-    char image[28][29];
-    int result;
-    while (std::cin) {
-        std::cin >> image;
-        result = classifier.Evaluate(image);
-        std::cout << result << std::endl;
-    }
+    std::cout << "Accuracy: " << classifier.GetAccuracy() << std::endl;
+
 }
+
+
 

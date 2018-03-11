@@ -8,15 +8,16 @@
 #include <vector>
 #include <fstream>
 
-void digit_classifier::Init() {
+
+digit_classifier::digit_classifier() {
     for (int i = 0; i < 10; i++) {
         digit_maps_[i] = digit_map();
     }
+
 }
 
 void digit_classifier::Train() {
 
-    Init();
     std::ifstream inFileTrainingData;
     std::ifstream inFileLabels;
 
@@ -26,10 +27,12 @@ void digit_classifier::Train() {
     char image[28][29];
     int label;
 
+    int lnumber = 1;
     while (inFileTrainingData && inFileLabels) {
         inFileTrainingData >> image;
         inFileLabels >> label;
-        digit_maps_[label].Process(image);
+        if (22 == digit_maps_[label].Process(image)) std::cout << lnumber;
+        lnumber += 28;
     }
 }
 
@@ -46,3 +49,34 @@ int digit_classifier::Evaluate(char input[28][29]) {
 
     return most_probable.first;
 }
+
+void digit_classifier::Test() {
+    std::ifstream inFileTestData;
+    std::ifstream inFileLabels;
+
+    inFileTestData.open("digitdata/testimages");
+    inFileLabels.open("digitdata/testlabels");
+
+    char image[28][29];
+    int label;
+
+    int result;
+    int correct = 0;
+    int total = 0;
+
+    while (inFileLabels && inFileTestData) {
+        inFileTestData >> image;
+        inFileLabels >> label;
+
+        result = Evaluate(image);
+        if (result == label) correct += 1;
+        total += 1;
+    }
+
+    accuracy_ = (double) correct / total;
+}
+
+double digit_classifier::GetAccuracy() {
+    return accuracy_;
+}
+

@@ -7,15 +7,6 @@
 #include <fstream>
 #include "digit_map.cpp"
 
-
-//std::ifstream &operator>>(std::ifstream &is, char image[28][29]) {
-//    for (int i = 0; i < 28; i++) {
-//        is.getline(image[i], 29);
-//        std::cout << image[i] << std::endl;
-//    }
-//    return is;
-//}
-
 std::istream &operator>>(std::istream &is, char image[28][29]) {
     for (int i = 0; i < 28; i++) {
         is.getline(image[i], 29);
@@ -26,13 +17,19 @@ std::istream &operator>>(std::istream &is, char image[28][29]) {
 class digit_classifier {
 
     std::map<int, digit_map> digit_maps_;
+    double accuracy_ = 0;
 
 public:
+
+    explicit digit_classifier();
+
     void Train();
 
-    void Init();
+    void Test();
 
     int Evaluate(char input[28][29]);
+
+    double GetAccuracy();
 
 };
 

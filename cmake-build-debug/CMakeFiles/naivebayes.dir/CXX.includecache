@@ -25,13 +25,19 @@ vector
 -
 iostream
 -
-digit_map.h
-/mnt/c/Users/P_Cat/IdeaProjects/naivebayes-hassang2/digit_map.h
+fstream
+-
+digit_map.cpp
+/mnt/c/Users/P_Cat/IdeaProjects/naivebayes-hassang2/digit_map.cpp
 
 /mnt/c/Users/P_Cat/IdeaProjects/naivebayes-hassang2/digit_map.cpp
 digit_map.h
 /mnt/c/Users/P_Cat/IdeaProjects/naivebayes-hassang2/digit_map.h
-math.h
+cmath
+-
+iostream
+-
+climits
 -
 
 /mnt/c/Users/P_Cat/IdeaProjects/naivebayes-hassang2/digit_map.h
@@ -43,4 +49,6 @@ map
 /mnt/c/Users/P_Cat/IdeaProjects/naivebayes-hassang2/digitdata/image_input.cpp
 
 /mnt/c/Users/P_Cat/IdeaProjects/naivebayes-hassang2/main.cpp
+digit_classifier.cpp
+/mnt/c/Users/P_Cat/IdeaProjects/naivebayes-hassang2/digit_classifier.cpp
 
