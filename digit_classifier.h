@@ -19,7 +19,6 @@
 std::istream &operator>>(std::istream &is, char image[28][29]) {
     for (int i = 0; i < 28; i++) {
         is.getline(image[i], 29);
-        std::cout << image[i] << std::endl;
     }
     return is;
 }

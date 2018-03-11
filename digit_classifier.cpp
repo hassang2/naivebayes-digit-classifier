@@ -34,9 +34,10 @@ void digit_classifier::Train() {
 }
 
 int digit_classifier::Evaluate(char input[28][29]) {
-    std::pair<int, double> most_probable(-1, 0.0);
+    std::pair<int, double> most_probable(-1, INT_MIN);
     for (auto digit_map : digit_maps_) {
         double probability = digit_map.second.Evaluate(input);
+
         if (probability > most_probable.second) {
             most_probable.first = digit_map.first;
             most_probable.second = probability;

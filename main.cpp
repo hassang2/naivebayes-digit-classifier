@@ -12,7 +12,7 @@ int main() {
     while (std::cin) {
         std::cin >> image;
         result = classifier.Evaluate(image);
-//        std::cout << result << std::endl;
+        std::cout << result << std::endl;
     }
 }
 

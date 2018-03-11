@@ -1,7 +1,3 @@
-//
-// Created by P_Cat on 3/10/2018.
-//
-
 #ifndef NAIVEBAYES_DIGIT_MAP_H
 #define NAIVEBAYES_DIGIT_MAP_H
 

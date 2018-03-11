@@ -1,5 +1,7 @@
 #include "digit_map.h"
 #include <cmath>
+#include <iostream>
+#include <climits>
 
 digit_map::digit_map(int number) {
 //    digit_ = number;
@@ -11,11 +13,11 @@ void digit_map::Add(int x, int y, int value) {
 }
 
 double digit_map::Evaluate(char input[28][29]) {
-    double probability = 0.0;
+    double probability = 0;
     for (int y = 0; y < sizeof(&input); y++) {
         for (int x = 0; x < sizeof(input[0]) - 1; x++) {
             std::pair<int, int> coordinate(x, y);
-            probability += log((feature_map_[coordinate][input[28][29]] + kSmoothing_)
+            probability += log((feature_map_[coordinate][GetValueOf(input[x][y])] + kSmoothing_)
                                                           / (frequency_ + 3 * kSmoothing_));
         }
     }
@@ -46,8 +48,9 @@ int GetValueOf(char c) {
     //one line if statements comply with google style guide
     if (c == ' ') return 0;
     if (c == '#') return 1;
-    if (c == '=') return 2;
+    if (c == '+') return 2;
 
+    std::cout << "invalid char" << c;
     return -1;
 }
 
