@@ -4,16 +4,35 @@
 #include <utility>
 #include <map>
 
+
 class digit_map {
-    double kSmoothing_ = .1;
+
+private:
+    int digit_;
+    int*** feature_map_;
     int frequency_ = 0;
-    std::map<std::pair<int, int>, std::map<int, int> > feature_map_;
 
 public:
 
+    explicit digit_map(int number);
+
+    int GetFrequency() const;
+
+    void SetFrequency(int freq);
+
+    int*** GetFeature_map();
+
+    void SetFeature_mapValue(int r, int c, int type, int value);
+
+    digit_map() = default;
+
     double Evaluate(char input[28][29]);
 
-    int Process(char input[28][29]);
+    void Process(char input[28][29]);
+
+    int GetDigit();
+
+
 };
 
 int GetValueOf(char c);

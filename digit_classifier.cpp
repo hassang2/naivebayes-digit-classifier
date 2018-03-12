@@ -7,11 +7,13 @@
 #include <map>
 #include <vector>
 #include <fstream>
+#include <algorithm>
+#include <climits>
 
 
 digit_classifier::digit_classifier() {
     for (int i = 0; i < 10; i++) {
-        digit_maps_[i] = digit_map();
+        digit_maps_[i] = digit_map(i);
     }
 
 }
@@ -27,12 +29,12 @@ void digit_classifier::Train() {
     char image[28][29];
     int label;
 
-    int lnumber = 1;
     while (inFileTrainingData && inFileLabels) {
         inFileTrainingData >> image;
         inFileLabels >> label;
-        if (22 == digit_maps_[label].Process(image)) std::cout << lnumber;
-        lnumber += 28;
+
+        digit_maps_[label].Process(image);
+        total_num_of_data += 1;
     }
 }
 
@@ -78,5 +80,58 @@ void digit_classifier::Test() {
 
 double digit_classifier::GetAccuracy() {
     return accuracy_;
+}
+
+
+void digit_classifier::SaveToFile(std::string name) {
+
+    std::ofstream ofs(name, std::ios::out);
+
+    for (auto map : digit_maps_) {
+        ofs << map.first << std::endl;;
+        ofs << map.second.GetFrequency() << std::endl;;
+
+        for (int r = 0; r < 28; r++) {
+            for (int c = 0; c < 28; c++) {
+                ofs << map.second.GetFeature_map()[r][c][0] << ' ';
+                ofs << map.second.GetFeature_map()[r][c][1] << ' ';
+                ofs << map.second.GetFeature_map()[r][c][2] << ' ';
+            }
+            ofs << std::endl;
+        }
+    }
+    ofs.close();
+}
+
+void digit_classifier::LoadFromFile(std::string name) {
+    std::ifstream inFile;
+    inFile.open(name);
+
+    int digit;
+    int frequency;
+    int value;
+
+    while (inFile) {
+        inFile >> digit;
+        std::cout << digit << std::endl;
+        inFile >> frequency;
+        digit_maps_[digit].SetFrequency(frequency);
+
+        for (int r = 0; r < 28; r++) {
+            for (int c = 0; c < 28; c++) {
+                for (int type = 0; type < 3; type++) {
+                    inFile >> value;
+                    digit_maps_[digit].SetFeature_mapValue(r, c, type, value);
+                }
+            }
+        }
+
+    }
+
+    inFile.close();
+}
+
+int digit_classifier::GetTotalNumOfData() {
+    return total_num_of_data;
 }
 
