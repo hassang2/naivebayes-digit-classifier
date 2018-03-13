@@ -60,6 +60,43 @@ CMAKE_SOURCE_DIR = /mnt/c/Users/P_Cat/IdeaProjects/naivebayes-hassang2
 CMAKE_BINARY_DIR = /mnt/c/Users/P_Cat/IdeaProjects/naivebayes-hassang2/cmake-build-debug
 
 #=============================================================================
+# Target rules for target CMakeFiles/testunit.dir
+
+# All Build rule for target.
+CMakeFiles/testunit.dir/all:
+	$(MAKE) -f CMakeFiles/testunit.dir/build.make CMakeFiles/testunit.dir/depend
+	$(MAKE) -f CMakeFiles/testunit.dir/build.make CMakeFiles/testunit.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/mnt/c/Users/P_Cat/IdeaProjects/naivebayes-hassang2/cmake-build-debug/CMakeFiles --progress-num=5,6,7 "Built target testunit"
+.PHONY : CMakeFiles/testunit.dir/all
+
+# Include target in all.
+all: CMakeFiles/testunit.dir/all
+
+.PHONY : all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/testunit.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /mnt/c/Users/P_Cat/IdeaProjects/naivebayes-hassang2/cmake-build-debug/CMakeFiles 3
+	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/testunit.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /mnt/c/Users/P_Cat/IdeaProjects/naivebayes-hassang2/cmake-build-debug/CMakeFiles 0
+.PHONY : CMakeFiles/testunit.dir/rule
+
+# Convenience name for target.
+testunit: CMakeFiles/testunit.dir/rule
+
+.PHONY : testunit
+
+# clean rule for target.
+CMakeFiles/testunit.dir/clean:
+	$(MAKE) -f CMakeFiles/testunit.dir/build.make CMakeFiles/testunit.dir/clean
+.PHONY : CMakeFiles/testunit.dir/clean
+
+# clean rule for target.
+clean: CMakeFiles/testunit.dir/clean
+
+.PHONY : clean
+
+#=============================================================================
 # Target rules for target CMakeFiles/naivebayes.dir
 
 # All Build rule for target.

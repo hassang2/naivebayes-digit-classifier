@@ -111,6 +111,19 @@ depend:
 .PHONY : depend
 
 #=============================================================================
+# Target rules for targets named testunit
+
+# Build rule for target.
+testunit: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 testunit
+.PHONY : testunit
+
+# fast build rule for target.
+testunit/fast:
+	$(MAKE) -f CMakeFiles/testunit.dir/build.make CMakeFiles/testunit.dir/build
+.PHONY : testunit/fast
+
+#=============================================================================
 # Target rules for targets named naivebayes
 
 # Build rule for target.
@@ -122,6 +135,60 @@ naivebayes: cmake_check_build_system
 naivebayes/fast:
 	$(MAKE) -f CMakeFiles/naivebayes.dir/build.make CMakeFiles/naivebayes.dir/build
 .PHONY : naivebayes/fast
+
+Tests/digit_classifier_test.o: Tests/digit_classifier_test.cpp.o
+
+.PHONY : Tests/digit_classifier_test.o
+
+# target to build an object file
+Tests/digit_classifier_test.cpp.o:
+	$(MAKE) -f CMakeFiles/testunit.dir/build.make CMakeFiles/testunit.dir/Tests/digit_classifier_test.cpp.o
+.PHONY : Tests/digit_classifier_test.cpp.o
+
+Tests/digit_classifier_test.i: Tests/digit_classifier_test.cpp.i
+
+.PHONY : Tests/digit_classifier_test.i
+
+# target to preprocess a source file
+Tests/digit_classifier_test.cpp.i:
+	$(MAKE) -f CMakeFiles/testunit.dir/build.make CMakeFiles/testunit.dir/Tests/digit_classifier_test.cpp.i
+.PHONY : Tests/digit_classifier_test.cpp.i
+
+Tests/digit_classifier_test.s: Tests/digit_classifier_test.cpp.s
+
+.PHONY : Tests/digit_classifier_test.s
+
+# target to generate assembly for a file
+Tests/digit_classifier_test.cpp.s:
+	$(MAKE) -f CMakeFiles/testunit.dir/build.make CMakeFiles/testunit.dir/Tests/digit_classifier_test.cpp.s
+.PHONY : Tests/digit_classifier_test.cpp.s
+
+Tests/digit_feature_test.o: Tests/digit_feature_test.cpp.o
+
+.PHONY : Tests/digit_feature_test.o
+
+# target to build an object file
+Tests/digit_feature_test.cpp.o:
+	$(MAKE) -f CMakeFiles/testunit.dir/build.make CMakeFiles/testunit.dir/Tests/digit_feature_test.cpp.o
+.PHONY : Tests/digit_feature_test.cpp.o
+
+Tests/digit_feature_test.i: Tests/digit_feature_test.cpp.i
+
+.PHONY : Tests/digit_feature_test.i
+
+# target to preprocess a source file
+Tests/digit_feature_test.cpp.i:
+	$(MAKE) -f CMakeFiles/testunit.dir/build.make CMakeFiles/testunit.dir/Tests/digit_feature_test.cpp.i
+.PHONY : Tests/digit_feature_test.cpp.i
+
+Tests/digit_feature_test.s: Tests/digit_feature_test.cpp.s
+
+.PHONY : Tests/digit_feature_test.s
+
+# target to generate assembly for a file
+Tests/digit_feature_test.cpp.s:
+	$(MAKE) -f CMakeFiles/testunit.dir/build.make CMakeFiles/testunit.dir/Tests/digit_feature_test.cpp.s
+.PHONY : Tests/digit_feature_test.cpp.s
 
 digit_classifier.o: digit_classifier.cpp.o
 
@@ -150,32 +217,32 @@ digit_classifier.cpp.s:
 	$(MAKE) -f CMakeFiles/naivebayes.dir/build.make CMakeFiles/naivebayes.dir/digit_classifier.cpp.s
 .PHONY : digit_classifier.cpp.s
 
-digit_map.o: digit_map.cpp.o
+digit_feature.o: digit_feature.cpp.o
 
-.PHONY : digit_map.o
+.PHONY : digit_feature.o
 
 # target to build an object file
-digit_map.cpp.o:
-	$(MAKE) -f CMakeFiles/naivebayes.dir/build.make CMakeFiles/naivebayes.dir/digit_map.cpp.o
-.PHONY : digit_map.cpp.o
+digit_feature.cpp.o:
+	$(MAKE) -f CMakeFiles/naivebayes.dir/build.make CMakeFiles/naivebayes.dir/digit_feature.cpp.o
+.PHONY : digit_feature.cpp.o
 
-digit_map.i: digit_map.cpp.i
+digit_feature.i: digit_feature.cpp.i
 
-.PHONY : digit_map.i
+.PHONY : digit_feature.i
 
 # target to preprocess a source file
-digit_map.cpp.i:
-	$(MAKE) -f CMakeFiles/naivebayes.dir/build.make CMakeFiles/naivebayes.dir/digit_map.cpp.i
-.PHONY : digit_map.cpp.i
+digit_feature.cpp.i:
+	$(MAKE) -f CMakeFiles/naivebayes.dir/build.make CMakeFiles/naivebayes.dir/digit_feature.cpp.i
+.PHONY : digit_feature.cpp.i
 
-digit_map.s: digit_map.cpp.s
+digit_feature.s: digit_feature.cpp.s
 
-.PHONY : digit_map.s
+.PHONY : digit_feature.s
 
 # target to generate assembly for a file
-digit_map.cpp.s:
-	$(MAKE) -f CMakeFiles/naivebayes.dir/build.make CMakeFiles/naivebayes.dir/digit_map.cpp.s
-.PHONY : digit_map.cpp.s
+digit_feature.cpp.s:
+	$(MAKE) -f CMakeFiles/naivebayes.dir/build.make CMakeFiles/naivebayes.dir/digit_feature.cpp.s
+.PHONY : digit_feature.cpp.s
 
 main.o: main.cpp.o
 
@@ -212,13 +279,20 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
+	@echo "... testunit"
 	@echo "... naivebayes"
+	@echo "... Tests/digit_classifier_test.o"
+	@echo "... Tests/digit_classifier_test.i"
+	@echo "... Tests/digit_classifier_test.s"
+	@echo "... Tests/digit_feature_test.o"
+	@echo "... Tests/digit_feature_test.i"
+	@echo "... Tests/digit_feature_test.s"
 	@echo "... digit_classifier.o"
 	@echo "... digit_classifier.i"
 	@echo "... digit_classifier.s"
-	@echo "... digit_map.o"
-	@echo "... digit_map.i"
-	@echo "... digit_map.s"
+	@echo "... digit_feature.o"
+	@echo "... digit_feature.i"
+	@echo "... digit_feature.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"

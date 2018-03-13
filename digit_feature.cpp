@@ -1,4 +1,4 @@
-#include "digit_map.h"
+#include "digit_feature.h"
 #include "digit_classifier.h"
 #include <cmath>
 #include <iostream>

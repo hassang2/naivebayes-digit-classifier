@@ -1,7 +1,5 @@
-#include "digit_map.h"
+#include "digit_feature.h"
 #include "digit_classifier.h"
-//#include "digit_map.cpp"
-
 int main() {
 
     digit_classifier classifier = digit_classifier();
@@ -12,7 +10,7 @@ int main() {
 
 //    classifier.LoadFromFile("boop");
 
-    for (int i = 0; i < 2; i ++) {
+    for (int i = 0; i < 4; i ++) {
         classifier.Test("train");
 
     }

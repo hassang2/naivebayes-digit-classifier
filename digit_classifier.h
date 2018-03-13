@@ -5,7 +5,7 @@
 #include <vector>
 #include <iostream>
 #include <fstream>
-#include "digit_map.h"
+#include "digit_feature.h"
 
 inline std::istream &operator>>(std::istream &is, char image[28][29]) {
     for (int i = 0; i < 28; i++) {

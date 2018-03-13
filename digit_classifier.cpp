@@ -1,6 +1,3 @@
-//
-// Created by P_Cat on 3/8/2018.
-//
 #include "digit_classifier.h"
 #include <iostream>
 #include <fstream>

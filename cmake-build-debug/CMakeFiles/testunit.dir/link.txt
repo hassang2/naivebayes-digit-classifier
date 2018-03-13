@@ -1,0 +1,1 @@
+/usr/bin/c++   -g   CMakeFiles/testunit.dir/Tests/digit_feature_test.cpp.o CMakeFiles/testunit.dir/Tests/digit_classifier_test.cpp.o  -o testunit 

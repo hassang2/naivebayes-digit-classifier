@@ -105,42 +105,42 @@ CMakeFiles/naivebayes.dir/main.cpp.o.provides: CMakeFiles/naivebayes.dir/main.cp
 CMakeFiles/naivebayes.dir/main.cpp.o.provides.build: CMakeFiles/naivebayes.dir/main.cpp.o
 
 
-CMakeFiles/naivebayes.dir/digit_map.cpp.o: CMakeFiles/naivebayes.dir/flags.make
-CMakeFiles/naivebayes.dir/digit_map.cpp.o: ../digit_map.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/Users/P_Cat/IdeaProjects/naivebayes-hassang2/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/naivebayes.dir/digit_map.cpp.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/naivebayes.dir/digit_map.cpp.o -c /mnt/c/Users/P_Cat/IdeaProjects/naivebayes-hassang2/digit_map.cpp
+CMakeFiles/naivebayes.dir/digit_feature.cpp.o: CMakeFiles/naivebayes.dir/flags.make
+CMakeFiles/naivebayes.dir/digit_feature.cpp.o: ../digit_feature.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/Users/P_Cat/IdeaProjects/naivebayes-hassang2/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/naivebayes.dir/digit_feature.cpp.o"
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/naivebayes.dir/digit_feature.cpp.o -c /mnt/c/Users/P_Cat/IdeaProjects/naivebayes-hassang2/digit_feature.cpp
 
-CMakeFiles/naivebayes.dir/digit_map.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/naivebayes.dir/digit_map.cpp.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/c/Users/P_Cat/IdeaProjects/naivebayes-hassang2/digit_map.cpp > CMakeFiles/naivebayes.dir/digit_map.cpp.i
+CMakeFiles/naivebayes.dir/digit_feature.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/naivebayes.dir/digit_feature.cpp.i"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/c/Users/P_Cat/IdeaProjects/naivebayes-hassang2/digit_feature.cpp > CMakeFiles/naivebayes.dir/digit_feature.cpp.i
 
-CMakeFiles/naivebayes.dir/digit_map.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/naivebayes.dir/digit_map.cpp.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/c/Users/P_Cat/IdeaProjects/naivebayes-hassang2/digit_map.cpp -o CMakeFiles/naivebayes.dir/digit_map.cpp.s
+CMakeFiles/naivebayes.dir/digit_feature.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/naivebayes.dir/digit_feature.cpp.s"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/c/Users/P_Cat/IdeaProjects/naivebayes-hassang2/digit_feature.cpp -o CMakeFiles/naivebayes.dir/digit_feature.cpp.s
 
-CMakeFiles/naivebayes.dir/digit_map.cpp.o.requires:
+CMakeFiles/naivebayes.dir/digit_feature.cpp.o.requires:
 
-.PHONY : CMakeFiles/naivebayes.dir/digit_map.cpp.o.requires
+.PHONY : CMakeFiles/naivebayes.dir/digit_feature.cpp.o.requires
 
-CMakeFiles/naivebayes.dir/digit_map.cpp.o.provides: CMakeFiles/naivebayes.dir/digit_map.cpp.o.requires
-	$(MAKE) -f CMakeFiles/naivebayes.dir/build.make CMakeFiles/naivebayes.dir/digit_map.cpp.o.provides.build
-.PHONY : CMakeFiles/naivebayes.dir/digit_map.cpp.o.provides
+CMakeFiles/naivebayes.dir/digit_feature.cpp.o.provides: CMakeFiles/naivebayes.dir/digit_feature.cpp.o.requires
+	$(MAKE) -f CMakeFiles/naivebayes.dir/build.make CMakeFiles/naivebayes.dir/digit_feature.cpp.o.provides.build
+.PHONY : CMakeFiles/naivebayes.dir/digit_feature.cpp.o.provides
 
-CMakeFiles/naivebayes.dir/digit_map.cpp.o.provides.build: CMakeFiles/naivebayes.dir/digit_map.cpp.o
+CMakeFiles/naivebayes.dir/digit_feature.cpp.o.provides.build: CMakeFiles/naivebayes.dir/digit_feature.cpp.o
 
 
 # Object files for target naivebayes
 naivebayes_OBJECTS = \
 "CMakeFiles/naivebayes.dir/digit_classifier.cpp.o" \
 "CMakeFiles/naivebayes.dir/main.cpp.o" \
-"CMakeFiles/naivebayes.dir/digit_map.cpp.o"
+"CMakeFiles/naivebayes.dir/digit_feature.cpp.o"
 
 # External object files for target naivebayes
 naivebayes_EXTERNAL_OBJECTS =
 
 naivebayes: CMakeFiles/naivebayes.dir/digit_classifier.cpp.o
 naivebayes: CMakeFiles/naivebayes.dir/main.cpp.o
-naivebayes: CMakeFiles/naivebayes.dir/digit_map.cpp.o
+naivebayes: CMakeFiles/naivebayes.dir/digit_feature.cpp.o
 naivebayes: CMakeFiles/naivebayes.dir/build.make
 naivebayes: CMakeFiles/naivebayes.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/mnt/c/Users/P_Cat/IdeaProjects/naivebayes-hassang2/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking CXX executable naivebayes"
@@ -153,7 +153,7 @@ CMakeFiles/naivebayes.dir/build: naivebayes
 
 CMakeFiles/naivebayes.dir/requires: CMakeFiles/naivebayes.dir/digit_classifier.cpp.o.requires
 CMakeFiles/naivebayes.dir/requires: CMakeFiles/naivebayes.dir/main.cpp.o.requires
-CMakeFiles/naivebayes.dir/requires: CMakeFiles/naivebayes.dir/digit_map.cpp.o.requires
+CMakeFiles/naivebayes.dir/requires: CMakeFiles/naivebayes.dir/digit_feature.cpp.o.requires
 
 .PHONY : CMakeFiles/naivebayes.dir/requires
 

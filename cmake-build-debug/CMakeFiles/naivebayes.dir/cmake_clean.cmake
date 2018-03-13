@@ -1,7 +1,7 @@
 file(REMOVE_RECURSE
   "CMakeFiles/naivebayes.dir/digit_classifier.cpp.o"
   "CMakeFiles/naivebayes.dir/main.cpp.o"
-  "CMakeFiles/naivebayes.dir/digit_map.cpp.o"
+  "CMakeFiles/naivebayes.dir/digit_feature.cpp.o"
   "naivebayes.pdb"
   "naivebayes"
 )
