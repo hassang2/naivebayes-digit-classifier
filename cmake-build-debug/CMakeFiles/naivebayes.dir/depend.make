@@ -3,17 +3,13 @@
 
 CMakeFiles/naivebayes.dir/digit_classifier.cpp.o: ../digit_classifier.cpp
 CMakeFiles/naivebayes.dir/digit_classifier.cpp.o: ../digit_classifier.h
-CMakeFiles/naivebayes.dir/digit_classifier.cpp.o: ../digit_map.cpp
 CMakeFiles/naivebayes.dir/digit_classifier.cpp.o: ../digit_map.h
 
+CMakeFiles/naivebayes.dir/digit_map.cpp.o: ../digit_classifier.h
 CMakeFiles/naivebayes.dir/digit_map.cpp.o: ../digit_map.cpp
 CMakeFiles/naivebayes.dir/digit_map.cpp.o: ../digit_map.h
 
-CMakeFiles/naivebayes.dir/digitdata/image_input.cpp.o: ../digitdata/image_input.cpp
-
-CMakeFiles/naivebayes.dir/main.cpp.o: ../digit_classifier.cpp
 CMakeFiles/naivebayes.dir/main.cpp.o: ../digit_classifier.h
-CMakeFiles/naivebayes.dir/main.cpp.o: ../digit_map.cpp
 CMakeFiles/naivebayes.dir/main.cpp.o: ../digit_map.h
 CMakeFiles/naivebayes.dir/main.cpp.o: ../main.cpp
 

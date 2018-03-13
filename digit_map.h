@@ -1,11 +1,14 @@
-#ifndef NAIVEBAYES_DIGIT_MAP_H
-#define NAIVEBAYES_DIGIT_MAP_H
+#ifndef NAIVEBAYES_DigitMap_H
+#define NAIVEBAYES_DigitMap_H
 
 #include <utility>
 #include <map>
+//#include "digit_classifier.h"
 
 
-class digit_map {
+
+class DigitMap {
+
 
 private:
     int digit_;
@@ -14,7 +17,7 @@ private:
 
 public:
 
-    explicit digit_map(int number);
+    explicit DigitMap(int number);
 
     int GetFrequency() const;
 
@@ -24,7 +27,7 @@ public:
 
     void SetFeature_mapValue(int r, int c, int type, int value);
 
-    digit_map() = default;
+    DigitMap() = default;
 
     double Evaluate(char input[28][29]);
 
@@ -37,4 +40,4 @@ public:
 
 int GetValueOf(char c);
 
-#endif //NAIVEBAYES_DIGIT_MAP_H
+#endif //NAIVEBAYES_DigitMap_H

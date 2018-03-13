@@ -177,33 +177,6 @@ digit_map.cpp.s:
 	$(MAKE) -f CMakeFiles/naivebayes.dir/build.make CMakeFiles/naivebayes.dir/digit_map.cpp.s
 .PHONY : digit_map.cpp.s
 
-digitdata/image_input.o: digitdata/image_input.cpp.o
-
-.PHONY : digitdata/image_input.o
-
-# target to build an object file
-digitdata/image_input.cpp.o:
-	$(MAKE) -f CMakeFiles/naivebayes.dir/build.make CMakeFiles/naivebayes.dir/digitdata/image_input.cpp.o
-.PHONY : digitdata/image_input.cpp.o
-
-digitdata/image_input.i: digitdata/image_input.cpp.i
-
-.PHONY : digitdata/image_input.i
-
-# target to preprocess a source file
-digitdata/image_input.cpp.i:
-	$(MAKE) -f CMakeFiles/naivebayes.dir/build.make CMakeFiles/naivebayes.dir/digitdata/image_input.cpp.i
-.PHONY : digitdata/image_input.cpp.i
-
-digitdata/image_input.s: digitdata/image_input.cpp.s
-
-.PHONY : digitdata/image_input.s
-
-# target to generate assembly for a file
-digitdata/image_input.cpp.s:
-	$(MAKE) -f CMakeFiles/naivebayes.dir/build.make CMakeFiles/naivebayes.dir/digitdata/image_input.cpp.s
-.PHONY : digitdata/image_input.cpp.s
-
 main.o: main.cpp.o
 
 .PHONY : main.o
@@ -246,9 +219,6 @@ help:
 	@echo "... digit_map.o"
 	@echo "... digit_map.i"
 	@echo "... digit_map.s"
-	@echo "... digitdata/image_input.o"
-	@echo "... digitdata/image_input.i"
-	@echo "... digitdata/image_input.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"

@@ -4,7 +4,7 @@
 #include <iostream>
 
 
-digit_map::digit_map(int number) {
+DigitMap::DigitMap(int number) {
     feature_map_ = new int **[digit_classifier::kHeight];
     for (int i = 0; i < digit_classifier::kHeight; i++) {
         feature_map_[i] = new int *[digit_classifier::kWidth];
@@ -14,7 +14,7 @@ digit_map::digit_map(int number) {
 }
 
 
-double digit_map::Evaluate(char input[28][29]) {
+double DigitMap::Evaluate(char input[28][29]) {
     double probability = 0;
     for (int r = 0; r < digit_classifier::kHeight; r++) {
         for (int c = 0; c < digit_classifier::kWidth; c++) {
@@ -28,7 +28,7 @@ double digit_map::Evaluate(char input[28][29]) {
 }
 
 
-void digit_map::Process(char input[28][29]) {
+void DigitMap::Process(char input[28][29]) {
     frequency_ += 1;
 
     for (int r = 0; r < digit_classifier::kHeight; r++) {
@@ -38,23 +38,24 @@ void digit_map::Process(char input[28][29]) {
     }
 }
 
-int digit_map::GetDigit() {
+int DigitMap::GetDigit() {
     return digit_;
 }
 
-int digit_map::GetFrequency() const {
+int DigitMap::GetFrequency() const {
     return frequency_;
 }
 
-int*** digit_map::GetFeature_map() {
+int*** DigitMap::GetFeature_map() {
     return feature_map_;
 }
 
-void digit_map::SetFrequency(int freq) {
+
+void DigitMap::SetFrequency(int freq) {
     frequency_ = freq;
 }
 
-void digit_map::SetFeature_mapValue(int r, int c, int type, int value) {
+void DigitMap::SetFeature_mapValue(int r, int c, int type, int value) {
     feature_map_[r][c][type] = value;
 }
 
@@ -68,8 +69,4 @@ int GetValueOf(char c) {
     std::cout << "what";
     return -1;
 }
-
-
-
-
 

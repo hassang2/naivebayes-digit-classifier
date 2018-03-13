@@ -1,4 +1,5 @@
-#include "digit_classifier.cpp"
+#include "digit_map.h"
+#include "digit_classifier.h"
 //#include "digit_map.cpp"
 
 int main() {
@@ -11,7 +12,17 @@ int main() {
 
 //    classifier.LoadFromFile("boop");
 
-    classifier.Test();
+    for (int i = 0; i < 2; i ++) {
+        classifier.Test("train");
+
+    }
+
+    classifier.Test("test");
+
+    std::cout << "test Accuracy: " << classifier.GetAccuracy() << std::endl;
+
+
+
 
     std::cout << "Accuracy: " << classifier.GetAccuracy() << std::endl;
 

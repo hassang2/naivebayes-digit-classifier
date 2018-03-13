@@ -7,7 +7,7 @@
 #include <fstream>
 #include "digit_map.h"
 
-std::istream &operator>>(std::istream &is, char image[28][29]) {
+inline std::istream &operator>>(std::istream &is, char image[28][29]) {
     for (int i = 0; i < 28; i++) {
         is.getline(image[i], 29);
     }
@@ -18,9 +18,8 @@ static int total_num_of_data = 0;
 
 class digit_classifier {
 
-
 private:
-    std::map<int, digit_map> digit_maps_;
+    std::map<int, DigitMap> digit_maps_;
     double accuracy_ = 0;
 
 public:
@@ -36,7 +35,7 @@ public:
 
     void Train();
 
-    void Test();
+    void Test(std::string name);
 
     int Evaluate(char input[28][29]);
 

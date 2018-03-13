@@ -13,7 +13,7 @@
 
 digit_classifier::digit_classifier() {
     for (int i = 0; i < 10; i++) {
-        digit_maps_[i] = digit_map(i);
+        digit_maps_[i] = DigitMap(i);
     }
 
 }
@@ -40,11 +40,11 @@ void digit_classifier::Train() {
 
 int digit_classifier::Evaluate(char input[28][29]) {
     std::pair<int, double> most_probable(-1, INT_MIN);
-    for (auto digit_map : digit_maps_) {
-        double probability = digit_map.second.Evaluate(input);
+    for (auto DigitMap : digit_maps_) {
+        double probability = DigitMap.second.Evaluate(input);
 
         if (probability > most_probable.second) {
-            most_probable.first = digit_map.first;
+            most_probable.first = DigitMap.first;
             most_probable.second = probability;
         }
     }
@@ -52,12 +52,17 @@ int digit_classifier::Evaluate(char input[28][29]) {
     return most_probable.first;
 }
 
-void digit_classifier::Test() {
+void digit_classifier::Test(std::string test) {
     std::ifstream inFileTestData;
     std::ifstream inFileLabels;
 
-    inFileTestData.open("digitdata/testimages");
-    inFileLabels.open("digitdata/testlabels");
+    if (test == "test") {
+        inFileTestData.open("digitdata/testimages");
+        inFileLabels.open("digitdata/testlabels");
+    } else {
+        inFileTestData.open("digitdata/trainingimages");
+        inFileLabels.open("digitdata/traininglabels");
+    }
 
     char image[28][29];
     int label;
@@ -72,6 +77,9 @@ void digit_classifier::Test() {
 
         result = Evaluate(image);
         if (result == label) correct += 1;
+        else {
+            digit_maps_[label].Process(image);
+        }
         total += 1;
     }
 

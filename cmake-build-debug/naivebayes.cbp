@@ -96,9 +96,6 @@
       <Unit filename="/mnt/c/Users/P_Cat/IdeaProjects/naivebayes-hassang2/digit_map.h">
          <Option target="naivebayes"/>
       </Unit>
-      <Unit filename="/mnt/c/Users/P_Cat/IdeaProjects/naivebayes-hassang2/digitdata/image_input.cpp">
-         <Option target="naivebayes"/>
-      </Unit>
       <Unit filename="/mnt/c/Users/P_Cat/IdeaProjects/naivebayes-hassang2/main.cpp">
          <Option target="naivebayes"/>
       </Unit>
