@@ -6,6 +6,8 @@ set(CMAKE_DEPENDS_LANGUAGES
 set(CMAKE_DEPENDS_CHECK_CXX
   "/mnt/c/Users/P_Cat/IdeaProjects/naivebayes-hassang2/Tests/digit_classifier_test.cpp" "/mnt/c/Users/P_Cat/IdeaProjects/naivebayes-hassang2/cmake-build-debug/CMakeFiles/testunit.dir/Tests/digit_classifier_test.cpp.o"
   "/mnt/c/Users/P_Cat/IdeaProjects/naivebayes-hassang2/Tests/digit_feature_test.cpp" "/mnt/c/Users/P_Cat/IdeaProjects/naivebayes-hassang2/cmake-build-debug/CMakeFiles/testunit.dir/Tests/digit_feature_test.cpp.o"
+  "/mnt/c/Users/P_Cat/IdeaProjects/naivebayes-hassang2/digit_classifier.cpp" "/mnt/c/Users/P_Cat/IdeaProjects/naivebayes-hassang2/cmake-build-debug/CMakeFiles/testunit.dir/digit_classifier.cpp.o"
+  "/mnt/c/Users/P_Cat/IdeaProjects/naivebayes-hassang2/digit_feature.cpp" "/mnt/c/Users/P_Cat/IdeaProjects/naivebayes-hassang2/cmake-build-debug/CMakeFiles/testunit.dir/digit_feature.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 

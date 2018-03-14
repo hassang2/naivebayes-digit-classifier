@@ -105,19 +105,71 @@ CMakeFiles/testunit.dir/Tests/digit_classifier_test.cpp.o.provides: CMakeFiles/t
 CMakeFiles/testunit.dir/Tests/digit_classifier_test.cpp.o.provides.build: CMakeFiles/testunit.dir/Tests/digit_classifier_test.cpp.o
 
 
+CMakeFiles/testunit.dir/digit_classifier.cpp.o: CMakeFiles/testunit.dir/flags.make
+CMakeFiles/testunit.dir/digit_classifier.cpp.o: ../digit_classifier.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/Users/P_Cat/IdeaProjects/naivebayes-hassang2/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/testunit.dir/digit_classifier.cpp.o"
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/testunit.dir/digit_classifier.cpp.o -c /mnt/c/Users/P_Cat/IdeaProjects/naivebayes-hassang2/digit_classifier.cpp
+
+CMakeFiles/testunit.dir/digit_classifier.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/testunit.dir/digit_classifier.cpp.i"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/c/Users/P_Cat/IdeaProjects/naivebayes-hassang2/digit_classifier.cpp > CMakeFiles/testunit.dir/digit_classifier.cpp.i
+
+CMakeFiles/testunit.dir/digit_classifier.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/testunit.dir/digit_classifier.cpp.s"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/c/Users/P_Cat/IdeaProjects/naivebayes-hassang2/digit_classifier.cpp -o CMakeFiles/testunit.dir/digit_classifier.cpp.s
+
+CMakeFiles/testunit.dir/digit_classifier.cpp.o.requires:
+
+.PHONY : CMakeFiles/testunit.dir/digit_classifier.cpp.o.requires
+
+CMakeFiles/testunit.dir/digit_classifier.cpp.o.provides: CMakeFiles/testunit.dir/digit_classifier.cpp.o.requires
+	$(MAKE) -f CMakeFiles/testunit.dir/build.make CMakeFiles/testunit.dir/digit_classifier.cpp.o.provides.build
+.PHONY : CMakeFiles/testunit.dir/digit_classifier.cpp.o.provides
+
+CMakeFiles/testunit.dir/digit_classifier.cpp.o.provides.build: CMakeFiles/testunit.dir/digit_classifier.cpp.o
+
+
+CMakeFiles/testunit.dir/digit_feature.cpp.o: CMakeFiles/testunit.dir/flags.make
+CMakeFiles/testunit.dir/digit_feature.cpp.o: ../digit_feature.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/Users/P_Cat/IdeaProjects/naivebayes-hassang2/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/testunit.dir/digit_feature.cpp.o"
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/testunit.dir/digit_feature.cpp.o -c /mnt/c/Users/P_Cat/IdeaProjects/naivebayes-hassang2/digit_feature.cpp
+
+CMakeFiles/testunit.dir/digit_feature.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/testunit.dir/digit_feature.cpp.i"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/c/Users/P_Cat/IdeaProjects/naivebayes-hassang2/digit_feature.cpp > CMakeFiles/testunit.dir/digit_feature.cpp.i
+
+CMakeFiles/testunit.dir/digit_feature.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/testunit.dir/digit_feature.cpp.s"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/c/Users/P_Cat/IdeaProjects/naivebayes-hassang2/digit_feature.cpp -o CMakeFiles/testunit.dir/digit_feature.cpp.s
+
+CMakeFiles/testunit.dir/digit_feature.cpp.o.requires:
+
+.PHONY : CMakeFiles/testunit.dir/digit_feature.cpp.o.requires
+
+CMakeFiles/testunit.dir/digit_feature.cpp.o.provides: CMakeFiles/testunit.dir/digit_feature.cpp.o.requires
+	$(MAKE) -f CMakeFiles/testunit.dir/build.make CMakeFiles/testunit.dir/digit_feature.cpp.o.provides.build
+.PHONY : CMakeFiles/testunit.dir/digit_feature.cpp.o.provides
+
+CMakeFiles/testunit.dir/digit_feature.cpp.o.provides.build: CMakeFiles/testunit.dir/digit_feature.cpp.o
+
+
 # Object files for target testunit
 testunit_OBJECTS = \
 "CMakeFiles/testunit.dir/Tests/digit_feature_test.cpp.o" \
-"CMakeFiles/testunit.dir/Tests/digit_classifier_test.cpp.o"
+"CMakeFiles/testunit.dir/Tests/digit_classifier_test.cpp.o" \
+"CMakeFiles/testunit.dir/digit_classifier.cpp.o" \
+"CMakeFiles/testunit.dir/digit_feature.cpp.o"
 
 # External object files for target testunit
 testunit_EXTERNAL_OBJECTS =
 
 testunit: CMakeFiles/testunit.dir/Tests/digit_feature_test.cpp.o
 testunit: CMakeFiles/testunit.dir/Tests/digit_classifier_test.cpp.o
+testunit: CMakeFiles/testunit.dir/digit_classifier.cpp.o
+testunit: CMakeFiles/testunit.dir/digit_feature.cpp.o
 testunit: CMakeFiles/testunit.dir/build.make
 testunit: CMakeFiles/testunit.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/mnt/c/Users/P_Cat/IdeaProjects/naivebayes-hassang2/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX executable testunit"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/mnt/c/Users/P_Cat/IdeaProjects/naivebayes-hassang2/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking CXX executable testunit"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/testunit.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -127,6 +179,8 @@ CMakeFiles/testunit.dir/build: testunit
 
 CMakeFiles/testunit.dir/requires: CMakeFiles/testunit.dir/Tests/digit_feature_test.cpp.o.requires
 CMakeFiles/testunit.dir/requires: CMakeFiles/testunit.dir/Tests/digit_classifier_test.cpp.o.requires
+CMakeFiles/testunit.dir/requires: CMakeFiles/testunit.dir/digit_classifier.cpp.o.requires
+CMakeFiles/testunit.dir/requires: CMakeFiles/testunit.dir/digit_feature.cpp.o.requires
 
 .PHONY : CMakeFiles/testunit.dir/requires
 

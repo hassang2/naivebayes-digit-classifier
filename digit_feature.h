@@ -7,37 +7,66 @@
 
 
 
-class DigitMap {
+class DigitFeature {
 
 
 private:
     int digit_;
-    int*** feature_map_;
+    int ***feature_map_;
     int frequency_ = 0;
+    int height_;
+    int width_;
 
 public:
 
-    explicit DigitMap(int number);
+    static int const kNumOfTypes = 3;
+    static double constexpr kSmoothing = .1;
+
+
+    explicit DigitFeature(int number, int h, int w);
 
     int GetFrequency() const;
 
     void SetFrequency(int freq);
 
-    int*** GetFeature_map();
+    int ***GetFeature_map();
 
-    void SetFeature_mapValue(int r, int c, int type, int value);
+    /**
+     * sets the value of the feature_matrix at the given location
+     * @param r  the row number
+     * @param c  the comumn number
+     * @param type the type of char (' ', # or +)
+     * @param value the value we want to put
+     */
+    void SetFeature_matrixValue(int r, int c, int type, int value);
 
-    DigitMap() = default;
+    DigitFeature() = default;
 
-    double Evaluate(char input[28][29]);
+    /**
+     * evaluates the given image and returns the probability that the image is this digit
+     * @param input the image we want to get the probability of
+     * @return the probability
+     */
+    double Evaluate(char **input);
 
-    void Process(char input[28][29]);
+    /**
+     * process the image. It goes through all the pixels of the input and increments the corresponsing location in the
+     * feature matrix
+     * @param input the image we want to process
+     */
+    void Process(char **input);
 
-    int GetDigit();
+    int GetHeight();
 
+    int GetWidth();
 
 };
 
+/**
+ * translates char to int int.
+ * @param c  the char value we want to translate
+ * @return the int corresponding to the char.
+ */
 int GetValueOf(char c);
 
 #endif //NAIVEBAYES_DigitMap_H

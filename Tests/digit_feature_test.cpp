@@ -1,7 +1,6 @@
 #define CATCH_CONFIG_MAIN
 
 #include "catch.hpp"
-#include "../digit_feature.h"
 #include "../digit_classifier.h"
 #include <fstream>
 #include <iostream>
@@ -16,8 +15,10 @@ TEST_CASE("simple_evaluate", "[evaluate]") {
     digit.SetFeature_matrixValue(1, 0, 2, 4);
     digit.SetFeature_matrixValue(1, 1, 2, 3);
 
-    std::vector<std::vector<int>> testInput(2, std::vector<int> (2));
-
+    auto **testInput = new char*[28];
+    for (int i = 0; i < 29; i++) {
+        testInput[i] = new char[29];
+    }
 
     std::ifstream inFile;
 
@@ -34,8 +35,10 @@ TEST_CASE("simple_evaluate", "[evaluate]") {
 TEST_CASE("simple_process", "[process]") {
     DigitFeature digit = DigitFeature(0, 2, 2);
 
-    std::vector<std::vector<int>> testInput(2, std::vector<int> (2));
-
+    auto **testInput = new char*[2];
+    for (int i = 0; i < 2; i++) {
+        testInput[i] = new char[3];
+    }
 
     std::ifstream inFile;
 
@@ -50,10 +53,12 @@ TEST_CASE("simple_process", "[process]") {
 
 }
 
-TEST_CASE("GetFrequency", "[process]") {
+TEST_CASE("GetFrequency", "[frequency]") {
     DigitFeature digit = DigitFeature(0, 2, 2);
-    std::vector<std::vector<int>> testInput(2, std::vector<int> (2));
-
+    auto **testInput = new char*[2];
+    for (int i = 0; i < 2; i++) {
+        testInput[i] = new char[3];
+    }
     std::ifstream inFile;
 
     inFile.open("twoXtwo");
@@ -65,14 +70,14 @@ TEST_CASE("GetFrequency", "[process]") {
 }
 
 
-TEST_CASE("dimensions", "[process]") {
+TEST_CASE("dimensions", "[height][width]") {
     DigitFeature digit = DigitFeature(0, 4, 2);
 
     REQUIRE(digit.GetHeight() == 4);
     REQUIRE(digit.GetWidth() == 2);
 }
 
-TEST_CASE("SetFeature_matrix", "[process]") {
+TEST_CASE("SetFeature_matrix", "[feature_matrix]") {
     DigitFeature digit = DigitFeature(0, 4, 2);
 
     digit.SetFeature_matrixValue(0, 1, 1, 5);
@@ -80,7 +85,7 @@ TEST_CASE("SetFeature_matrix", "[process]") {
     REQUIRE(digit.GetFeature_map()[0][1][1] == 5);
 }
 
-TEST_CASE("SetFrequency", "[process]") {
+TEST_CASE("SetFrequency", "[frequency]") {
     DigitFeature digit = DigitFeature(0, 4, 2);
 
     digit.SetFrequency(11);

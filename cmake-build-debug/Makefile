@@ -196,6 +196,7 @@ digit_classifier.o: digit_classifier.cpp.o
 
 # target to build an object file
 digit_classifier.cpp.o:
+	$(MAKE) -f CMakeFiles/testunit.dir/build.make CMakeFiles/testunit.dir/digit_classifier.cpp.o
 	$(MAKE) -f CMakeFiles/naivebayes.dir/build.make CMakeFiles/naivebayes.dir/digit_classifier.cpp.o
 .PHONY : digit_classifier.cpp.o
 
@@ -205,6 +206,7 @@ digit_classifier.i: digit_classifier.cpp.i
 
 # target to preprocess a source file
 digit_classifier.cpp.i:
+	$(MAKE) -f CMakeFiles/testunit.dir/build.make CMakeFiles/testunit.dir/digit_classifier.cpp.i
 	$(MAKE) -f CMakeFiles/naivebayes.dir/build.make CMakeFiles/naivebayes.dir/digit_classifier.cpp.i
 .PHONY : digit_classifier.cpp.i
 
@@ -214,6 +216,7 @@ digit_classifier.s: digit_classifier.cpp.s
 
 # target to generate assembly for a file
 digit_classifier.cpp.s:
+	$(MAKE) -f CMakeFiles/testunit.dir/build.make CMakeFiles/testunit.dir/digit_classifier.cpp.s
 	$(MAKE) -f CMakeFiles/naivebayes.dir/build.make CMakeFiles/naivebayes.dir/digit_classifier.cpp.s
 .PHONY : digit_classifier.cpp.s
 
@@ -223,6 +226,7 @@ digit_feature.o: digit_feature.cpp.o
 
 # target to build an object file
 digit_feature.cpp.o:
+	$(MAKE) -f CMakeFiles/testunit.dir/build.make CMakeFiles/testunit.dir/digit_feature.cpp.o
 	$(MAKE) -f CMakeFiles/naivebayes.dir/build.make CMakeFiles/naivebayes.dir/digit_feature.cpp.o
 .PHONY : digit_feature.cpp.o
 
@@ -232,6 +236,7 @@ digit_feature.i: digit_feature.cpp.i
 
 # target to preprocess a source file
 digit_feature.cpp.i:
+	$(MAKE) -f CMakeFiles/testunit.dir/build.make CMakeFiles/testunit.dir/digit_feature.cpp.i
 	$(MAKE) -f CMakeFiles/naivebayes.dir/build.make CMakeFiles/naivebayes.dir/digit_feature.cpp.i
 .PHONY : digit_feature.cpp.i
 
@@ -241,6 +246,7 @@ digit_feature.s: digit_feature.cpp.s
 
 # target to generate assembly for a file
 digit_feature.cpp.s:
+	$(MAKE) -f CMakeFiles/testunit.dir/build.make CMakeFiles/testunit.dir/digit_feature.cpp.s
 	$(MAKE) -f CMakeFiles/naivebayes.dir/build.make CMakeFiles/naivebayes.dir/digit_feature.cpp.s
 .PHONY : digit_feature.cpp.s
 
