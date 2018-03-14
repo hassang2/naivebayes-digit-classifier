@@ -3,15 +3,9 @@
 
 #include <utility>
 #include <map>
-//#include "digit_classifier.h"
-
-
-
 class DigitFeature {
 
-
 private:
-    int digit_;
     int ***feature_map_;
     int frequency_ = 0;
     int height_;
@@ -23,7 +17,7 @@ public:
     static double constexpr kSmoothing = .1;
 
 
-    explicit DigitFeature(int number, int h, int w);
+    explicit DigitFeature(int h, int w);
 
     int GetFrequency() const;
 
@@ -59,7 +53,6 @@ public:
     int GetHeight();
 
     int GetWidth();
-
 };
 
 /**

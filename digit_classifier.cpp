@@ -10,7 +10,7 @@
 
 DigitClassifier::DigitClassifier(int h, int w) {
     for (int i = 0; i < 10; i++) {
-        digit_maps_[i] = DigitFeature(i, h, w);
+        digit_maps_[i] = DigitFeature(h, w);
     }
 
 }

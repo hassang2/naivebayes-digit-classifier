@@ -8,7 +8,7 @@
 
 
 TEST_CASE("simple_evaluate", "[evaluate]") {
-    DigitFeature digit = DigitFeature(0, 2, 2);
+    DigitFeature digit = DigitFeature(2, 2);
 
     digit.SetFeature_matrixValue(0, 0, 0, 1);
     digit.SetFeature_matrixValue(0, 1, 1, 3);
@@ -33,7 +33,7 @@ TEST_CASE("simple_evaluate", "[evaluate]") {
 }
 
 TEST_CASE("simple_process", "[process]") {
-    DigitFeature digit = DigitFeature(0, 2, 2);
+    DigitFeature digit = DigitFeature(2, 2);
 
     auto **testInput = new char*[2];
     for (int i = 0; i < 2; i++) {
@@ -46,15 +46,13 @@ TEST_CASE("simple_process", "[process]") {
     inFile >> testInput;
     digit.Process(testInput);
 
-
-
     REQUIRE(digit.GetFeature_map()[0][0][2] == 1);
     REQUIRE(digit.GetFeature_map()[1][0][2] == 1);
 
 }
 
 TEST_CASE("GetFrequency", "[frequency]") {
-    DigitFeature digit = DigitFeature(0, 2, 2);
+    DigitFeature digit = DigitFeature(2, 2);
     auto **testInput = new char*[2];
     for (int i = 0; i < 2; i++) {
         testInput[i] = new char[3];
@@ -71,14 +69,14 @@ TEST_CASE("GetFrequency", "[frequency]") {
 
 
 TEST_CASE("dimensions", "[height][width]") {
-    DigitFeature digit = DigitFeature(0, 4, 2);
+    DigitFeature digit = DigitFeature(4, 2);
 
     REQUIRE(digit.GetHeight() == 4);
     REQUIRE(digit.GetWidth() == 2);
 }
 
 TEST_CASE("SetFeature_matrix", "[feature_matrix]") {
-    DigitFeature digit = DigitFeature(0, 4, 2);
+    DigitFeature digit = DigitFeature(4, 2);
 
     digit.SetFeature_matrixValue(0, 1, 1, 5);
 
@@ -86,7 +84,7 @@ TEST_CASE("SetFeature_matrix", "[feature_matrix]") {
 }
 
 TEST_CASE("SetFrequency", "[frequency]") {
-    DigitFeature digit = DigitFeature(0, 4, 2);
+    DigitFeature digit = DigitFeature(4, 2);
 
     digit.SetFrequency(11);
     REQUIRE(digit.GetFrequency() == 11);

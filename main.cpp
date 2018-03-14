@@ -4,17 +4,16 @@
 int main() {
 
     DigitClassifier classifier = DigitClassifier(28, 28);
-//    classifier.Train("digitdata/trainingimages", "digitdata/traininglabels");
+    classifier.Train("digitdata/trainingimages", "digitdata/traininglabels");
 
+//    classifier.SaveToFile("savedData");
+//    classifier.LoadFromFile("savedData");
 
-//    classifier.SaveToFile("boop");
+    //a nice trick that I came up with:
+    for (int i = 0; i < 10; i ++) {
+        classifier.Test("digitdata/trainingimages", "digitdata/traininglabels");
 
-    classifier.LoadFromFile("boop");
-
-//    for (int i = 0; i < 1; i ++) {
-//        classifier.Test("train");
-//
-//    }
+    }
 
     classifier.Test("digitdata/testimages", "digitdata/testlabels");
 
@@ -31,10 +30,7 @@ int main() {
         }
         std::cout << std::endl;
     }
-
-
     return 0;
-
 }
 
 

@@ -3,7 +3,7 @@
 #include <iostream>
 
 
-DigitFeature::DigitFeature(int number, int h, int w) {
+DigitFeature::DigitFeature(int h, int w) {
     height_ = h;
     width_ = w;
     feature_map_ = new int **[height_];
@@ -11,7 +11,6 @@ DigitFeature::DigitFeature(int number, int h, int w) {
         feature_map_[i] = new int *[width_];
         for (int k = 0; k < width_; k++) feature_map_[i][k] = new int[kNumOfTypes];
     }
-    digit_ = number;
 }
 
 
