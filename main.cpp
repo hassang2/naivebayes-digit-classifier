@@ -2,25 +2,23 @@
 #include "digit_classifier.h"
 int main() {
 
-    digit_classifier classifier = digit_classifier();
-    classifier.Train();
+    std::cout<< "beep ";
 
+    DigitClassifier classifier = DigitClassifier();
 
-    classifier.SaveToFile("boop");
+    classifier.Train("digitdata/trainingimages", "digitdata/traininglabels");
+
+    std::cout<< "boop ";
+
+//    classifier.SaveToFile("boop");
 
 //    classifier.LoadFromFile("boop");
 
     for (int i = 0; i < 4; i ++) {
-        classifier.Test("train");
+        classifier.Test("digitdata/trainingimages", "digitdata/traininglabels");
 
     }
-
-    classifier.Test("test");
-
-    std::cout << "test Accuracy: " << classifier.GetAccuracy() << std::endl;
-
-
-
+    classifier.Test("digitdata/testimages", "digitdata/testlabels");
 
     std::cout << "Accuracy: " << classifier.GetAccuracy() << std::endl;
 

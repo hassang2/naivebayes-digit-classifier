@@ -6,24 +6,23 @@
 #include <fstream>
 #include <algorithm>
 #include <climits>
+#include <vector>
 
-
-digit_classifier::digit_classifier() {
+DigitClassifier::DigitClassifier() {
     for (int i = 0; i < 10; i++) {
-        digit_maps_[i] = DigitMap(i);
+        digit_maps_[i] = DigitFeature(i, kHeight, kWidth);
     }
-
 }
 
-void digit_classifier::Train() {
+void DigitClassifier::Train(std::string images_dir, std::string labels_dir) {
 
     std::ifstream inFileTrainingData;
     std::ifstream inFileLabels;
 
-    inFileTrainingData.open("digitdata/trainingimages");
-    inFileLabels.open("digitdata/traininglabels");
+    inFileTrainingData.open(images_dir);
+    inFileLabels.open(labels_dir);
 
-    char image[28][29];
+    std::vector<std::vector<char> > image;
     int label;
 
     while (inFileTrainingData && inFileLabels) {
@@ -31,11 +30,10 @@ void digit_classifier::Train() {
         inFileLabels >> label;
 
         digit_maps_[label].Process(image);
-        total_num_of_data += 1;
     }
 }
 
-int digit_classifier::Evaluate(char input[28][29]) {
+int DigitClassifier::Evaluate(std::vector<std::vector<char> > input) {
     std::pair<int, double> most_probable(-1, INT_MIN);
     for (auto DigitMap : digit_maps_) {
         double probability = DigitMap.second.Evaluate(input);
@@ -49,19 +47,15 @@ int digit_classifier::Evaluate(char input[28][29]) {
     return most_probable.first;
 }
 
-void digit_classifier::Test(std::string test) {
+void DigitClassifier::Test(std::string images_dir, std::string labels_dir) {
     std::ifstream inFileTestData;
     std::ifstream inFileLabels;
 
-    if (test == "test") {
-        inFileTestData.open("digitdata/testimages");
-        inFileLabels.open("digitdata/testlabels");
-    } else {
-        inFileTestData.open("digitdata/trainingimages");
-        inFileLabels.open("digitdata/traininglabels");
-    }
+    inFileTestData.open(images_dir);
+    inFileLabels.open(labels_dir);
 
-    char image[28][29];
+
+    std::vector<std::vector<char> > image;
     int label;
 
     int result;
@@ -83,12 +77,12 @@ void digit_classifier::Test(std::string test) {
     accuracy_ = (double) correct / total;
 }
 
-double digit_classifier::GetAccuracy() {
+double DigitClassifier::GetAccuracy() {
     return accuracy_;
 }
 
 
-void digit_classifier::SaveToFile(std::string name) {
+void DigitClassifier::SaveToFile(std::string name) {
 
     std::ofstream ofs(name, std::ios::out);
 
@@ -108,7 +102,7 @@ void digit_classifier::SaveToFile(std::string name) {
     ofs.close();
 }
 
-void digit_classifier::LoadFromFile(std::string name) {
+void DigitClassifier::LoadFromFile(std::string name) {
     std::ifstream inFile;
     inFile.open(name);
 
@@ -126,7 +120,7 @@ void digit_classifier::LoadFromFile(std::string name) {
             for (int c = 0; c < 28; c++) {
                 for (int type = 0; type < 3; type++) {
                     inFile >> value;
-                    digit_maps_[digit].SetFeature_mapValue(r, c, type, value);
+                    digit_maps_[digit].SetFeature_matrixValue(r, c, type, value);
                 }
             }
         }
@@ -136,7 +130,9 @@ void digit_classifier::LoadFromFile(std::string name) {
     inFile.close();
 }
 
-int digit_classifier::GetTotalNumOfData() {
-    return total_num_of_data;
+std::map<int, DigitFeature> DigitClassifier::GetDigit_map() {
+    return digit_maps_;
 }
+
+
 

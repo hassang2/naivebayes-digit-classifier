@@ -7,43 +7,45 @@
 #include <fstream>
 #include "digit_feature.h"
 
-inline std::istream &operator>>(std::istream &is, char image[28][29]) {
+inline std::istream &operator>>(std::istream &is, std::vector<std::vector<char> > &image) {
+    std::cout << "what";
+
+    auto *chars = new char[29];
     for (int i = 0; i < 28; i++) {
-        is.getline(image[i], 29);
+        is.getline(chars, 29);
     }
+
+    image.push_back(std::vector<char> (chars, chars + 29));
+
     return is;
 }
 
-static int total_num_of_data = 0;
-
-class digit_classifier {
+class DigitClassifier {
 
 private:
-    std::map<int, DigitMap> digit_maps_;
+    std::map<int, DigitFeature> digit_maps_;
     double accuracy_ = 0;
 
 public:
 
-    static int const kWidth = 28;
-    static int const kHeight = 28;
-    static int const kNumOfTypes = 3;
-    static double constexpr kSmoothing = .1;
+    int const kHeight = 28;
+    int const kWidth = 28;
 
-    explicit digit_classifier();
+    explicit DigitClassifier();
 
-    static int GetTotalNumOfData();
+    void Train(std::string images_dir, std::string labels_dir);
 
-    void Train();
+    void Test(std::string images_dir, std::string labels_dir);
 
-    void Test(std::string name);
-
-    int Evaluate(char input[28][29]);
+    int Evaluate(std::vector<std::vector<char> > input);
 
     double GetAccuracy();
 
     void SaveToFile(std::string name);
 
     void LoadFromFile(std::string name);
+
+    std::map<int, DigitFeature> GetDigit_map();
 };
 
 

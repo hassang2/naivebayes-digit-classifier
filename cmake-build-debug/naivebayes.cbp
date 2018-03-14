@@ -137,15 +137,19 @@
          <Option target="testunit"/>
       </Unit>
       <Unit filename="/mnt/c/Users/P_Cat/IdeaProjects/naivebayes-hassang2/digit_classifier.cpp">
+         <Option target="testunit"/>
          <Option target="naivebayes"/>
       </Unit>
       <Unit filename="/mnt/c/Users/P_Cat/IdeaProjects/naivebayes-hassang2/digit_classifier.h">
+         <Option target="testunit"/>
          <Option target="naivebayes"/>
       </Unit>
       <Unit filename="/mnt/c/Users/P_Cat/IdeaProjects/naivebayes-hassang2/digit_feature.cpp">
+         <Option target="testunit"/>
          <Option target="naivebayes"/>
       </Unit>
       <Unit filename="/mnt/c/Users/P_Cat/IdeaProjects/naivebayes-hassang2/digit_feature.h">
+         <Option target="testunit"/>
          <Option target="naivebayes"/>
       </Unit>
       <Unit filename="/mnt/c/Users/P_Cat/IdeaProjects/naivebayes-hassang2/main.cpp">

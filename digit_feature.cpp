@@ -1,62 +1,78 @@
 #include "digit_feature.h"
-#include "digit_classifier.h"
+//#include "digit_classifier.h"
 #include <cmath>
 #include <iostream>
 
 
-DigitMap::DigitMap(int number) {
-    feature_map_ = new int **[digit_classifier::kHeight];
-    for (int i = 0; i < digit_classifier::kHeight; i++) {
-        feature_map_[i] = new int *[digit_classifier::kWidth];
-        for (int k = 0; k < digit_classifier::kWidth; k++) feature_map_[i][k] = new int[digit_classifier::kNumOfTypes];
-    }
+DigitFeature::DigitFeature(int number, int h, int w) {
+    height_ = h;
+    width_ = w;
+
+    feature_matrix_ = std::vector<std::vector<std::vector<int> > >(height_,
+                                                                   std::vector<std::vector<int> >(width_,
+                                                                                                  std::vector<int>(3)));
+//    for (int i = 0; i < height_; i++) {
+//        feature_matrix_[i] = std::vector<std::vector<int> > (width_);
+//        for (int k = 0; k < width_; k++) {
+//        }
+//    }
+//}
+
     digit_ = number;
 }
 
 
-double DigitMap::Evaluate(char input[28][29]) {
+double DigitFeature::Evaluate(std::vector<std::vector<char> > input) {
     double probability = 0;
-    for (int r = 0; r < digit_classifier::kHeight; r++) {
-        for (int c = 0; c < digit_classifier::kWidth; c++) {
-            probability += log((feature_map_[r][c][GetValueOf(input[r][c])] + digit_classifier::kSmoothing)
-                               / (frequency_ + digit_classifier::kNumOfTypes * digit_classifier::kSmoothing));
+    for (int r = 0; r < height_; r++) {
+        for (int c = 0; c < width_; c++) {
+            probability += log((feature_matrix_[r][c][GetValueOf(input[r][c])] + kSmoothing)
+                               / (frequency_ + kNumOfTypes * kSmoothing));
         }
     }
-    probability += (double) frequency_ / digit_classifier::GetTotalNumOfData();
+    probability += (double) frequency_ / kNumOfData;
 
     return probability;
 }
 
 
-void DigitMap::Process(char input[28][29]) {
+void DigitFeature::Process(std::vector<std::vector<char> > input) {
     frequency_ += 1;
 
-    for (int r = 0; r < digit_classifier::kHeight; r++) {
-        for (int c = 0; c < digit_classifier::kWidth; c++) {
-            feature_map_[r][c][GetValueOf(input[r][c])] += 1;
+    for (int r = 0; r < height_; r++) {
+        for (int c = 0; c < width_; c++) {
+            feature_matrix_[r][c][GetValueOf(input[r][c])] += 1;
         }
     }
 }
 
-int DigitMap::GetDigit() {
+int DigitFeature::GetDigit() {
     return digit_;
 }
 
-int DigitMap::GetFrequency() const {
+int DigitFeature::GetFrequency() {
     return frequency_;
 }
 
-int*** DigitMap::GetFeature_map() {
-    return feature_map_;
+std::vector<std::vector<std::vector<int> > > DigitFeature::GetFeature_map() {
+    return feature_matrix_;
 }
 
 
-void DigitMap::SetFrequency(int freq) {
+void DigitFeature::SetFrequency(int freq) {
     frequency_ = freq;
 }
 
-void DigitMap::SetFeature_mapValue(int r, int c, int type, int value) {
-    feature_map_[r][c][type] = value;
+void DigitFeature::SetFeature_matrixValue(int r, int c, int type, int value) {
+    feature_matrix_[r][c][type] = value;
+}
+
+int DigitFeature::GetWidth() {
+    return width_;
+}
+
+int DigitFeature::GetHeight() {
+    return height_;
 }
 
 

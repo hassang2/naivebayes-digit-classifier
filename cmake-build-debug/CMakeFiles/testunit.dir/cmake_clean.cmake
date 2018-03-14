@@ -1,6 +1,8 @@
 file(REMOVE_RECURSE
   "CMakeFiles/testunit.dir/Tests/digit_feature_test.cpp.o"
   "CMakeFiles/testunit.dir/Tests/digit_classifier_test.cpp.o"
+  "CMakeFiles/testunit.dir/digit_feature.cpp.o"
+  "CMakeFiles/testunit.dir/digit_classifier.cpp.o"
   "testunit.pdb"
   "testunit"
 )

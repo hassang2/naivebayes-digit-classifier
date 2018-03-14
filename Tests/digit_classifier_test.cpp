@@ -6,7 +6,7 @@
 
 TEST_CASE("operator_overload", "[operator_overload]") {
 
-    std::vector<std::vector<int> > testInput(2, std::vector<int> (2));
+    std::vector<std::vector<char> > testInput(2, std::vector<char> (2));
     std::ifstream inFile;
     inFile.open("twoXtwo");
 
@@ -17,7 +17,6 @@ TEST_CASE("operator_overload", "[operator_overload]") {
 }
 
 TEST_CASE("train", "[train]") {
-
     DigitClassifier classifier = DigitClassifier();
 
     classifier.Train("twoXtwo", "testLabel");
@@ -25,9 +24,50 @@ TEST_CASE("train", "[train]") {
 }
 
 TEST_CASE("evaluate", "[eval]") {
-
     DigitClassifier classifier = DigitClassifier();
 
-    classifier.Train("../", "testLabel");
-    REQUIRE(classifier.GetDigit_map()[3].GetFrequency() == 1);
+    classifier.Train("twoXtwo", "testLabel");
+
+    std::vector<std::vector<char>> testInput(2, std::vector<char> (2));
+
+
+    std::ifstream inFile;
+
+    inFile.open("twoXtwo");
+    inFile >> testInput;
+
+    int result = classifier.Evaluate(testInput);
+    REQUIRE(result == 3);
+}
+
+TEST_CASE("test", "[test]") {
+    DigitClassifier classifier = DigitClassifier();
+
+    classifier.Train("twoXtwo", "testLabel");
+    classifier.Test("twoXtwo", "testLabel");
+
+    REQUIRE(classifier.GetAccuracy() == 1.0);
+}
+
+TEST_CASE("save_to_file", "[save]") {
+    DigitClassifier classifier = DigitClassifier();
+
+    classifier.Train("twoXtwo", "testLabel");
+    classifier.SaveToFile("testSave");
+
+    std::ifstream f("testSave");
+    REQUIRE(f.good());
+}
+
+
+TEST_CASE("load_from_file", "[load]") {
+    DigitClassifier classifier = DigitClassifier();
+
+    classifier.Train("twoXtwo", "testLabel");
+    classifier.SaveToFile("testSave");
+    classifier.LoadFromFile("testSave");
+
+    classifier.Test("twoXtwo", "testLabel");
+
+    REQUIRE(classifier.GetAccuracy() == 1.0);
 }

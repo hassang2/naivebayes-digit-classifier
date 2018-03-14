@@ -23,6 +23,8 @@ algorithm
 -
 climits
 -
+vector
+-
 
 /mnt/c/Users/P_Cat/IdeaProjects/naivebayes-hassang2/digit_classifier.h
 vector
@@ -31,26 +33,28 @@ iostream
 -
 fstream
 -
-digit_map.h
-/mnt/c/Users/P_Cat/IdeaProjects/naivebayes-hassang2/digit_map.h
+digit_feature.h
+/mnt/c/Users/P_Cat/IdeaProjects/naivebayes-hassang2/digit_feature.h
 
-/mnt/c/Users/P_Cat/IdeaProjects/naivebayes-hassang2/digit_map.cpp
-digit_map.h
-/mnt/c/Users/P_Cat/IdeaProjects/naivebayes-hassang2/digit_map.h
+/mnt/c/Users/P_Cat/IdeaProjects/naivebayes-hassang2/digit_feature.cpp
+digit_feature.h
+/mnt/c/Users/P_Cat/IdeaProjects/naivebayes-hassang2/digit_feature.h
 cmath
 -
 iostream
 -
 
-/mnt/c/Users/P_Cat/IdeaProjects/naivebayes-hassang2/digit_map.h
+/mnt/c/Users/P_Cat/IdeaProjects/naivebayes-hassang2/digit_feature.h
 utility
 -
 map
 -
-digit_classifier.h
-/mnt/c/Users/P_Cat/IdeaProjects/naivebayes-hassang2/digit_classifier.h
+vector
+-
 
 /mnt/c/Users/P_Cat/IdeaProjects/naivebayes-hassang2/main.cpp
+digit_feature.h
+/mnt/c/Users/P_Cat/IdeaProjects/naivebayes-hassang2/digit_feature.h
 digit_classifier.h
 /mnt/c/Users/P_Cat/IdeaProjects/naivebayes-hassang2/digit_classifier.h
 

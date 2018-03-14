@@ -3,37 +3,46 @@
 
 #include <utility>
 #include <map>
-//#include "digit_classifier.h"
+#include <vector>
 
 
-
-class DigitMap {
+class DigitFeature {
 
 
 private:
     int digit_;
-    int*** feature_map_;
+    std::vector<std::vector<std::vector<int> > > feature_matrix_;
     int frequency_ = 0;
+    int width_;
+    int height_;
 
 public:
 
-    explicit DigitMap(int number);
+    static double constexpr kSmoothing = .1;
+    static int const kNumOfData = 5000;
+    static int const kNumOfTypes = 3;
 
-    int GetFrequency() const;
+    explicit DigitFeature(int number, int h, int w);
+
+    int GetFrequency();
 
     void SetFrequency(int freq);
 
-    int*** GetFeature_map();
+    std::vector<std::vector<std::vector<int> > > GetFeature_map();
 
-    void SetFeature_mapValue(int r, int c, int type, int value);
+    void SetFeature_matrixValue(int r, int c, int type, int value);
 
-    DigitMap() = default;
+    DigitFeature() = default;
 
-    double Evaluate(char input[28][29]);
+    double Evaluate(std::vector<std::vector<char> > input);
 
-    void Process(char input[28][29]);
+    void Process(std::vector<std::vector<char> > input);
 
     int GetDigit();
+
+    int GetHeight();
+
+    int GetWidth();
 
 
 };

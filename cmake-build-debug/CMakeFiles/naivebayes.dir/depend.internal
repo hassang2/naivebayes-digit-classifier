@@ -4,12 +4,11 @@
 CMakeFiles/naivebayes.dir/digit_classifier.cpp.o
  /mnt/c/Users/P_Cat/IdeaProjects/naivebayes-hassang2/digit_classifier.cpp
  /mnt/c/Users/P_Cat/IdeaProjects/naivebayes-hassang2/digit_classifier.h
- /mnt/c/Users/P_Cat/IdeaProjects/naivebayes-hassang2/digit_map.h
-CMakeFiles/naivebayes.dir/digit_map.cpp.o
- /mnt/c/Users/P_Cat/IdeaProjects/naivebayes-hassang2/digit_classifier.h
- /mnt/c/Users/P_Cat/IdeaProjects/naivebayes-hassang2/digit_map.cpp
- /mnt/c/Users/P_Cat/IdeaProjects/naivebayes-hassang2/digit_map.h
+ /mnt/c/Users/P_Cat/IdeaProjects/naivebayes-hassang2/digit_feature.h
+CMakeFiles/naivebayes.dir/digit_feature.cpp.o
+ /mnt/c/Users/P_Cat/IdeaProjects/naivebayes-hassang2/digit_feature.cpp
+ /mnt/c/Users/P_Cat/IdeaProjects/naivebayes-hassang2/digit_feature.h
 CMakeFiles/naivebayes.dir/main.cpp.o
  /mnt/c/Users/P_Cat/IdeaProjects/naivebayes-hassang2/digit_classifier.h
- /mnt/c/Users/P_Cat/IdeaProjects/naivebayes-hassang2/digit_map.h
+ /mnt/c/Users/P_Cat/IdeaProjects/naivebayes-hassang2/digit_feature.h
  /mnt/c/Users/P_Cat/IdeaProjects/naivebayes-hassang2/main.cpp

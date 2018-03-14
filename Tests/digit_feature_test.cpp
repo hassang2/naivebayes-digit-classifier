@@ -16,8 +16,7 @@ TEST_CASE("simple_evaluate", "[evaluate]") {
     digit.SetFeature_matrixValue(1, 0, 2, 4);
     digit.SetFeature_matrixValue(1, 1, 2, 3);
 
-    std::vector<std::vector<int>> testInput(2, std::vector<int> (2));
-
+    std::vector<std::vector<char>> testInput(2, std::vector<char> (2));
 
     std::ifstream inFile;
 
@@ -34,7 +33,7 @@ TEST_CASE("simple_evaluate", "[evaluate]") {
 TEST_CASE("simple_process", "[process]") {
     DigitFeature digit = DigitFeature(0, 2, 2);
 
-    std::vector<std::vector<int>> testInput(2, std::vector<int> (2));
+    std::vector<std::vector<char>> testInput(2, std::vector<char> (2));
 
 
     std::ifstream inFile;
@@ -52,7 +51,7 @@ TEST_CASE("simple_process", "[process]") {
 
 TEST_CASE("GetFrequency", "[process]") {
     DigitFeature digit = DigitFeature(0, 2, 2);
-    std::vector<std::vector<int>> testInput(2, std::vector<int> (2));
+    std::vector<std::vector<char>> testInput(2, std::vector<char> (2));
 
     std::ifstream inFile;
 
